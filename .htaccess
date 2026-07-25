@@ -1,0 +1,27 @@
+# DocumentRoot is this directory, so application internals sit inside the web
+# root and MUST be blocked explicitly. config/ holds the DB password.
+#
+# These rules are the primary protection. Each sensitive directory also carries
+# its own .htaccess, and the PHP files there abort unless included — so even a
+# lost AllowOverride does not expose credentials.
+
+DirectoryIndex index.php
+
+# Never serve application internals.
+RedirectMatch 404 ^/(config|src|views|lang|db|deploy)(/|$)
+
+# .git must never be readable over HTTP.
+RedirectMatch 404 ^/\.git(/|$)
+
+# Never serve dotfiles, SQL dumps, configs, logs, backups or docs.
+<FilesMatch "^\.|\.(sql|ini|log|bak|sample|md|conf|dist|yml|yaml|lock)$">
+  Require all denied
+</FilesMatch>
+
+Options -Indexes +FollowSymLinks
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

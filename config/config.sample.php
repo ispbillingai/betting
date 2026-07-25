@@ -6,8 +6,8 @@
  */
 return [
     'app' => [
-        'company_name' => 'Ispeldger Bet',
-        'base_url'     => 'https://betting.ispeldger.com',
+        'company_name' => 'Ispledger Bet',
+        'base_url'     => 'https://betting.ispledger.com',
         'default_lang' => 'en',
         'timezone'     => 'Africa/Nairobi',
     ],

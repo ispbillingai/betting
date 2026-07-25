@@ -5,13 +5,13 @@
  */
 return [
     // chrome
-    'app_title'    => 'Ispeldger Bet',
+    'app_title'    => 'Ispledger Bet',
     'app_subtitle' => 'Odds & automated betting',
     'logout'       => 'Log out',
     'public_site'  => 'Public site',
 
     // login
-    'login_title'   => 'Ispeldger Bet',
+    'login_title'   => 'Ispledger Bet',
     'login_sub'     => 'Sign in to the control panel',
     'login_user_ph' => 'Username',
     'login_ph'      => 'Password',

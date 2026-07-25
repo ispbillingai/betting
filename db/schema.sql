@@ -1,4 +1,4 @@
--- betting.ispeldger.com — initial schema (accounts + settings only, no domain logic yet)
+-- betting.ispledger.com — initial schema (accounts + settings only, no domain logic yet)
 -- Run once as a MySQL superuser:  mysql -u root -p < db/schema.sql
 
 CREATE DATABASE IF NOT EXISTS betting

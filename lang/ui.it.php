@@ -4,13 +4,13 @@
  */
 return [
     // chrome
-    'app_title'    => 'Ispeldger Bet',
+    'app_title'    => 'Ispledger Bet',
     'app_subtitle' => 'Quote e scommesse automatiche',
     'logout'       => 'Esci',
     'public_site'  => 'Sito pubblico',
 
     // login
-    'login_title'   => 'Ispeldger Bet',
+    'login_title'   => 'Ispledger Bet',
     'login_sub'     => 'Accedi al pannello di controllo',
     'login_user_ph' => 'Nome utente',
     'login_ph'      => 'Password',

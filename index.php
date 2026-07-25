@@ -2,10 +2,10 @@
 declare(strict_types=1);
 
 /**
- * Public landing page for betting.ispeldger.com. Static marketing copy — the
+ * Public landing page for betting.ispledger.com. Static marketing copy — the
  * only live link is through to the dashboard login.
  */
-require __DIR__ . '/../src/Bootstrap.php';
+require __DIR__ . '/src/Bootstrap.php';
 
 use Bet\Bootstrap;
 use Bet\Config;
@@ -23,7 +23,7 @@ $lang = in_array($_COOKIE['bet_ui_lang'] ?? '', $avail, true)
     : (in_array($default, $avail, true) ? $default : 'en');
 
 $h = fn($s): string => htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8');
-$brand = (string)Config::get('app.company_name', 'Ispeldger Bet');
+$brand = (string)Config::get('app.company_name', 'Ispledger Bet');
 
 $copy = [
     'en' => [

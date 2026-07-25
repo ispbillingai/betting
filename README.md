@@ -1,4 +1,4 @@
-# betting.ispeldger.com
+# betting.ispledger.com
 
 Automated betting platform — odds aggregation and rule-driven placement.
 This stage is the **shell only**: landing page, login, dashboard chrome, users
@@ -39,10 +39,10 @@ Only `public/` is served. Everything else sits above the docroot.
 
 3. **Apache**
    ```
-   cp deploy/betting.ispeldger.com.conf /etc/apache2/sites-available/
-   a2ensite betting.ispeldger.com && a2enmod rewrite headers
+   cp deploy/betting.ispledger.com.conf /etc/apache2/sites-available/
+   a2ensite betting.ispledger.com && a2enmod rewrite headers
    apache2ctl configtest && systemctl reload apache2
-   certbot --apache -d betting.ispeldger.com
+   certbot --apache -d betting.ispledger.com
    ```
 
 4. **PHP** — needs `pdo_mysql` enabled (8.1+).

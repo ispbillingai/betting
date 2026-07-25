@@ -7,7 +7,7 @@ declare(strict_types=1);
  * from /views. Domain logic (odds, events, bets, automation) is not wired up
  * yet — those tabs render placeholder views on purpose.
  */
-require __DIR__ . '/../src/Bootstrap.php';
+require __DIR__ . '/src/Bootstrap.php';
 
 use Bet\Auth;
 use Bet\Bootstrap;
@@ -30,7 +30,7 @@ $default = (string)Config::get('app.default_lang', 'en');
 $lang = in_array($_COOKIE['bet_ui_lang'] ?? '', $avail, true)
     ? $_COOKIE['bet_ui_lang']
     : (in_array($default, $avail, true) ? $default : 'en');
-$UI = require dirname(__DIR__) . '/lang/ui.' . $lang . '.php';
+$UI = require __DIR__ . '/lang/ui.' . $lang . '.php';
 $t = fn(string $k): string => $UI[$k] ?? $k;
 $h = fn($s): string => htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8');
 
@@ -151,11 +151,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['do'])) {
 // ---- render ----
 render_head($t, $h, $lang, $tab, $flash, $flashType);
 
-$viewFile = dirname(__DIR__) . '/views/' . $tab . '.php';
+$viewFile = __DIR__ . '/views/' . $tab . '.php';
 if (is_file($viewFile)) {
     include $viewFile;
 } else {
-    include dirname(__DIR__) . '/views/placeholder.php';
+    include __DIR__ . '/views/placeholder.php';
 }
 
 render_foot();
