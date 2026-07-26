@@ -19,7 +19,7 @@ return [
 
     // nav
     'nav_overview' => 'Panoramica',
-    'nav_odds'     => 'Quote',
+    'nav_odds'     => 'Surebet',
     'nav_events'   => 'Eventi',
     'nav_bets'     => 'Scommesse',
     'nav_rules'    => 'Regole di automazione',
@@ -49,6 +49,10 @@ return [
     'ov_bets'     => 'Scommesse aperte',
     'ov_pnl'      => 'Profitti / perdite',
     'ov_activity' => 'Attività recente',
+    'ov_active_sb' => 'Surebet attive',
+    'ov_best'      => 'migliore',
+    'ov_top'       => 'Migliori opportunità',
+    'ov_all'       => 'Vedi tutte',
 
     // placeholder pages
     'ph_odds'   => 'Qui apparirà il confronto delle quote in tempo reale tra i bookmaker.',
@@ -80,6 +84,52 @@ return [
     'u_disable'      => 'Disabilita',
     'u_yes'          => 'Sì',
     'u_no'           => 'No',
+
+    // surebets
+    'sb_title'     => 'Surebet',
+    'sb_lead'      => 'Opportunità di arbitraggio attive, ROI più alto per primo. Le '
+                    . 'puntate sono divise per ottenere lo stesso ritorno con qualsiasi esito.',
+    'sb_none'      => 'Nessuna surebet attiva. Esegui lo scanner o abbassa il ROI minimo.',
+    'sb_no_table'  => 'Tabelle arbitraggio mancanti — esegui db/migrations/002_arbitrage.sql.',
+    'sb_min_roi'   => 'ROI minimo %',
+    'sb_bankroll'  => 'Capitale',
+    'sb_apply'     => 'Applica',
+    'sb_selection' => 'Esito',
+    'sb_book'      => 'Bookmaker',
+    'sb_price'     => 'Quota',
+    'sb_stake'     => 'Puntata',
+    'sb_returns'   => 'Ritorno',
+    'sb_total'     => 'Totale puntato',
+    'sb_payout'    => 'Incasso',
+    'sb_profit'    => 'Profitto',
+    'sb_take'      => 'Piazza scommessa',
+    'sb_market'    => 'Mercato',
+
+    // events
+    'ev_lead'   => 'Eventi con quote salvate e quanti bookmaker li quotano.',
+    'ev_match'  => 'Partita',
+    'ev_league' => 'Campionato',
+    'ev_start'  => 'Inizio',
+    'ev_books'  => 'Book',
+
+    // bets
+    'bt_lead'    => 'Posizioni prese dalle surebet. Quote e puntate sono congelate al piazzamento.',
+    'bt_none'    => 'Nessuna scommessa registrata.',
+    'bt_count'   => 'Scommesse piazzate',
+    'bt_staked'  => 'Totale puntato',
+    'bt_open'    => 'Puntate aperte',
+    'bt_profit'  => 'Profitto',
+    'bt_legs'    => 'Giocate',
+    'bt_stake'   => 'Puntata',
+    'bt_exp_roi' => 'ROI previsto',
+    'bt_status'  => 'Stato',
+    'bt_settle'  => 'Liquida',
+    'bt_void'    => 'Annullata',
+    'bt_open_s'  => 'Aperta',
+    'bt_won'     => 'Vinta',
+    'bt_lost'    => 'Persa',
+    'bt_taken'   => 'Scommessa registrata.',
+    'bt_settled' => 'Scommessa liquidata.',
 
     // settings
     'set_title'    => 'Impostazioni',

@@ -9,6 +9,7 @@ declare(strict_types=1);
  */
 require __DIR__ . '/src/Bootstrap.php';
 
+use Bet\Arb\Bets;
 use Bet\Auth;
 use Bet\Bootstrap;
 use Bet\Config;
@@ -88,10 +89,35 @@ $tab  = in_array($_GET['tab'] ?? '', $tabs, true) ? $_GET['tab'] : 'overview';
 
 // ---- POST actions ----
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['do'])) {
+    $do = (string)$_POST['do'];
+
+    // Placing and settling bets is the job of every operator, not just admins,
+    // so these run before the admin gate below.
+    if ($do === 'bet_take') {
+        try {
+            Bets::take(
+                (int)($_POST['surebet_id'] ?? 0),
+                max(1.0, (float)($_POST['bankroll'] ?? 1000)),
+                isset($me['id']) && (int)$me['id'] > 0 ? (int)$me['id'] : null
+            );
+            redirect_flash('bets', $t('bt_taken'));
+        } catch (Throwable $e) {
+            redirect_flash('odds', $e->getMessage(), 'err');
+        }
+    }
+
+    if ($do === 'bet_settle') {
+        try {
+            Bets::settle((int)($_POST['id'] ?? 0), (string)($_POST['result'] ?? 'void'));
+            redirect_flash('bets', $t('bt_settled'));
+        } catch (Throwable $e) {
+            redirect_flash('bets', $e->getMessage(), 'err');
+        }
+    }
+
     if (!$isAdmin) {
         redirect_flash($tab, $t('not_allowed'), 'err');
     }
-    $do = (string)$_POST['do'];
 
     if ($do === 'user_create') {
         try {

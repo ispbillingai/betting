@@ -20,7 +20,7 @@ return [
 
     // nav
     'nav_overview' => 'Overview',
-    'nav_odds'     => 'Odds',
+    'nav_odds'     => 'Surebets',
     'nav_events'   => 'Events',
     'nav_bets'     => 'Bets',
     'nav_rules'    => 'Automation rules',
@@ -50,6 +50,10 @@ return [
     'ov_bets'     => 'Open bets',
     'ov_pnl'      => 'Profit / loss',
     'ov_activity' => 'Recent activity',
+    'ov_active_sb' => 'Active surebets',
+    'ov_best'      => 'best',
+    'ov_top'       => 'Top opportunities',
+    'ov_all'       => 'View all',
 
     // placeholder pages
     'ph_odds'   => 'Live odds comparison across bookmakers will appear here.',
@@ -81,6 +85,52 @@ return [
     'u_disable'      => 'Disable',
     'u_yes'          => 'Yes',
     'u_no'           => 'No',
+
+    // surebets
+    'sb_title'     => 'Surebets',
+    'sb_lead'      => 'Active arbitrage opportunities, best ROI first. Stakes are '
+                    . 'split so the return is the same whichever outcome wins.',
+    'sb_none'      => 'No active surebets. Run the scanner, or lower the minimum ROI.',
+    'sb_no_table'  => 'Arbitrage tables are missing — run db/migrations/002_arbitrage.sql.',
+    'sb_min_roi'   => 'Minimum ROI %',
+    'sb_bankroll'  => 'Bankroll',
+    'sb_apply'     => 'Apply',
+    'sb_selection' => 'Selection',
+    'sb_book'      => 'Bookmaker',
+    'sb_price'     => 'Odds',
+    'sb_stake'     => 'Stake',
+    'sb_returns'   => 'Returns',
+    'sb_total'     => 'Total staked',
+    'sb_payout'    => 'Payout',
+    'sb_profit'    => 'Profit',
+    'sb_take'      => 'Place bet',
+    'sb_market'    => 'Market',
+
+    // events
+    'ev_lead'   => 'Fixtures with stored prices, and how many bookmakers quote each one.',
+    'ev_match'  => 'Match',
+    'ev_league' => 'League',
+    'ev_start'  => 'Kick-off',
+    'ev_books'  => 'Books',
+
+    // bets
+    'bt_lead'    => 'Positions taken from surebets. Prices and stakes are frozen at placement.',
+    'bt_none'    => 'No bets recorded yet.',
+    'bt_count'   => 'Bets placed',
+    'bt_staked'  => 'Total staked',
+    'bt_open'    => 'Open stake',
+    'bt_profit'  => 'Profit',
+    'bt_legs'    => 'Legs',
+    'bt_stake'   => 'Stake',
+    'bt_exp_roi' => 'Expected ROI',
+    'bt_status'  => 'Status',
+    'bt_settle'  => 'Settle',
+    'bt_void'    => 'Void',
+    'bt_open_s'  => 'Open',
+    'bt_won'     => 'Won',
+    'bt_lost'    => 'Lost',
+    'bt_taken'   => 'Bet recorded.',
+    'bt_settled' => 'Bet settled.',
 
     // settings
     'set_title'    => 'Settings',
