@@ -10,6 +10,12 @@ return [
         'base_url'     => 'https://betting.ispledger.com',
         'default_lang' => 'en',
         'timezone'     => 'Africa/Nairobi',
+
+        // '1' lets bin/tick.php generate and move simulated prices so the
+        // dashboard is demonstrable before a real odds feed exists.
+        // Set to '0' the moment a live feed is connected, so simulated prices
+        // can never be mistaken for real ones.
+        'demo_mode'    => '0',
     ],
 
     'db' => [

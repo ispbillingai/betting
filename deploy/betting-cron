@@ -1,0 +1,16 @@
+# Cron for betting.ispledger.com
+#   crontab -l | cat - deploy/betting-cron | crontab -
+#   crontab -l          # verify
+#
+# scan.php is the real work: it reads whatever prices are in the odds table and
+# records arbitrage. It is source-agnostic, so it keeps working unchanged once a
+# live feed replaces the demo prices.
+#
+# tick.php is DEMO ONLY and self-disables when app.demo_mode is not '1'.
+
+# Scan for arbitrage every minute.
+* * * * * /usr/bin/php /var/www/html/betting/bin/scan.php >> /var/log/betting/scan.log 2>&1
+
+# Demo price movement so opportunities appear and disappear. Remove this line
+# once a real odds feed is connected (or set demo_mode to 0, which stops it too).
+*/2 * * * * /usr/bin/php /var/www/html/betting/bin/tick.php >> /var/log/betting/tick.log 2>&1

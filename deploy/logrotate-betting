@@ -1,0 +1,13 @@
+# Scanner logs, rotated so a per-minute cron cannot fill the disk.
+#   cp deploy/logrotate-betting /etc/logrotate.d/betting
+#   logrotate -d /etc/logrotate.d/betting   # dry run
+
+/var/log/betting/*.log {
+    daily
+    rotate 7
+    compress
+    delaycompress
+    missingok
+    notifempty
+    copytruncate
+}
